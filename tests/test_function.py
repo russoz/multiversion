@@ -43,5 +43,38 @@ def test_function():
     assert my_function() == "fallback"
 
 
+def test_condition_op():
+    def target_function():
+        return 123
+
+    @multiversion(target_function)
+    def my_function():
+        return 456
+
+    with pytest.raises(AttributeError):
+        @my_function.condition_whatever(789)
+        def fail_func():
+            return 65536
+
+
+def test_wraps():
+    @multiversion(selection_function=lambda: 42)
+    def funcky():
+        """Something funky is going on"""
+        return 123
+
+    assert funcky.__name__ == 'funcky'
+    assert funcky.__doc__ == """Something funky is going on"""
+
+    @funcky.condition_eq(42)
+    def funcky42():
+        """Two bit or not two bit"""
+        return 456
+
+    assert funcky.__name__ == 'funcky'
+    assert funcky.__doc__ == """Something funky is going on"""
+
+
+
 if __name__ == '__main__':
     pytest.main()
