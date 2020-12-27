@@ -15,7 +15,7 @@ def test_versions():
     def target_func():
         return target_var
 
-    @multiversion(target_func, normalizer="version")
+    @multiversion(target_func, normalizer="strictversion")
     def my_function():
         return "sv v123"
 
@@ -50,7 +50,7 @@ def test_versions():
     assert my_function() == "lv lt v752"
 
 
-@multiversion(target=python_version, normalizer="version")
+@multiversion(selection_function=python_version, normalizer="version")
 def witty_comment():
     return "Whatever python"
 

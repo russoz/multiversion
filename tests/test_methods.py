@@ -13,7 +13,7 @@ def test_method():
         def target_method(self):
             return target_var
 
-        @multiversion(target_method, target_is_method=True)
+        @multiversion(target_method, selection_is_method=True)
         def my_method(self):
             return "fallback"
 
