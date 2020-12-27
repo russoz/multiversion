@@ -20,7 +20,7 @@ def test_function():
     def func_eq2():
         return "value 2"
 
-    @my_function.condition(lambda v: v == 3)
+    @my_function.condition_eq(3)
     def func_eq3():
         return "value 3"
 

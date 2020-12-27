@@ -25,7 +25,7 @@ def test_method():
         def method_eq3(self):
             return "value 3"
 
-        @my_method.condition(lambda v: v > 10)
+        @my_method.condition_gt(10)
         def method_gt10(self):
             return "value > 10"
 
