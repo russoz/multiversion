@@ -1,0 +1,6 @@
+[run]
+source = multiversion
+omit =
+  */.virtualenv*/*
+  tests/*
+

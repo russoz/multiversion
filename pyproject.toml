@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "multiversion"
+version = "0.1.0"
+description = "Provides a customizable/extensible decorator that allows running different code for different conditions/criteria defined by the user."
+authors = ["Alexei Znamensky <russoz@gmail.com>"]
+license = "BSD"
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[tool.poetry.dependencies]
+python = "^3.6"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.1"
+pytest-cov = "^2.10.1"
+black = "^20.8b1"
+coverage = {extras = ["toml"], version = "^5.3.1"}
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
