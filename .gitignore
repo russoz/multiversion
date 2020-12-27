@@ -1,0 +1,9 @@
+.coverage
+dist/*
+htmlcov/*
+.idea
+**/__pycache__
+*.pyc
+*.pyo
+.pytest_cache/*
+.tox
