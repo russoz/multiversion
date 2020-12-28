@@ -3,7 +3,7 @@ name = "multiversion"
 version = "0.1.0"
 description = "Provides a customizable/extensible decorator that allows running different code for different conditions/criteria defined by the user."
 authors = ["Alexei Znamensky <russoz@gmail.com>"]
-license = "BSD"
+license = "BSD-4-Clause"
 classifiers = [
     "Development Status :: 2 - Pre-Alpha",
     "Intended Audience :: Developers",
@@ -18,7 +18,7 @@ classifiers = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.6"
+python = ">2.7"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.1"
