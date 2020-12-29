@@ -24,21 +24,25 @@ def test_function():
     def func_eq3():
         return "value 3"
 
-    @my_function.condition(lambda v: v > 10)
-    def func_gt10():
+    @my_function.condition(lambda v: v > 20)
+    def _():
         return "value > 10"
 
-    @my_function.condition(lambda v: v > 20)
-    def func_gt10():
+    @my_function.condition(lambda v: v > 10)
+    def _():
         return "value > 20"
 
     assert my_function() == "fallback"
+
     target_var = 2
     assert my_function() == "value 2"
+
     target_var = 3
     assert my_function() == "value 3"
+
     target_var = 50
     assert my_function() == "value > 10"
+
     target_var = 8
     assert my_function() == "fallback"
 
@@ -73,7 +77,6 @@ def test_wraps():
 
     assert funcky.__name__ == 'funcky'
     assert funcky.__doc__ == """Something funky is going on"""
-
 
 
 if __name__ == '__main__':
