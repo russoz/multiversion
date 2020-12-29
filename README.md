@@ -58,7 +58,7 @@ have been declared. The first one whose condition yields `True` as result will b
 ### Features
 
 * Easy declaration: just add the `multiversion` decorator to a function or a method. The only mandatory argument is
-  the `selection_function` - a callable that will return the value upon which the function selection will be made.
+  `selection_function` - a callable that will return the value upon which the function selection will be made.
   * If the `selection_function` is actually a method (a regular one, neither a `staticmethod` nor a `classmethod`),
     then the user must pass `selection_is_method=True`, as the decorator has no way of calculating that.
   * Readily available functions, such as `platform.python_version()` can be used as selection functions.
@@ -114,12 +114,12 @@ have been declared. The first one whose condition yields `True` as result will b
   be coerced into `normalizer` first.
   * As a convenience, user can specify plain strings: `version`, `strictversion` (and a couple of
     accompanying aliases for those), that will indicate the use of
-    
-        lambda x: LooseVersion(str(x))
-        lambda x: StrictVersion(str(x))
+    ```python
+    lambda x: LooseVersion(str(x))
+    lambda x: StrictVersion(str(x))
+    ```
   
     as normalizers, respectively.
-
 
 ## Installation
 
